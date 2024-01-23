@@ -76,9 +76,21 @@
             document.getElementById(s+"x"+o).src="icons/"+kep+".png";
             t[s][o]=kep;
         }
+        let go = ["null","key","exit"]
+        function mozog(){
+            let b= event.key;
+            setKep(ps,po,"null")
+            if(b=='w'&& go.includes(t[ps-1][po]))ps--;
+            if(b=='s'&& go.includes(t[ps+1][po]))ps++;
+            if(b=='a'&& go.includes(t[ps][po-1]))po--;
+            if(b=='d'&& go.includes(t[ps][po+1]))po++;
+            if(t[ps][po]=="key")setKep(ds,30,"exit");
+            if(t[ps][po]=="exit")gondol();
+            setKep(ps,po,"man");
+        }
     </script>
 </head>
-<body onload="start();">
+<body onload="start();" onkeypress="mozog();">
     <div id="jatek"></div>
 </body>
 </html>
