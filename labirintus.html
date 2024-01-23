@@ -34,10 +34,10 @@
             let s=0;o=0;
             let sorok=[];
             let osz=[];
-            for(let s=1;s<20;s++) for(let o=1;o<30;o++){
-                setKep(s,o,null);
+            for( s=1;s<20;s++) for( o=1;o<30;o++){
+                setKep(s,o,"null");
             }while(sorok.lenght + osz.lenght<23){
-                if(Math.random()>0.5){
+                if(Math.random()>0.5&& sorok.lenght<9){
                     do{
                         s=Math.floor(Math.random()*9+1)*2;
                     }while(sorok.includes(s))
@@ -47,7 +47,7 @@
                     }else{
                         for(o=29;o>0;o--) if(t[s][o-1]!="wall") setKep(s,o,"wall");
                     }
-                }else{
+                }else if (osz.lenght<14) {
                     do{
                         o=Math.floor(Math.random()*14+1)*2;
                     }while(osz.includes(o))
