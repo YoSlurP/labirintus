@@ -46,7 +46,7 @@
                     do{
                         s=Math.floor(Math.random()*9+1)*2;
                     }while(sorok.includes(s));
-                    sorok.push(s);
+                    sorok.add(s);
                     if(Math.random()>0.5){
                         for(o=1;o<30;o++){
                             if(t[s][o+1] != "wall") setKep(s,o,"wall");
@@ -60,7 +60,7 @@
                     do{
                         o=Math.floor(Math.random()*14+1)*2;
                     }while(osz.includes(o))
-                    osz.push(s);
+                    osz.add(o);
                     if(Math.random()>0.5){
                         for(s=1;s<20;s++)if(t[s+1][o]!="wall") setKep(s,o,"wall");
                     }else{
@@ -74,7 +74,8 @@
                 ko=Math.floor(Math.random()*29+1);
             }while(t[ks][ko]=="wall")
             setKep(ks,ko,"key");
-            ds=Math.floor((Math.random()*10)*2+1); setKep(ds,30,"door");
+            ds=Math.floor(Math.random()*10)*2+1; setKep(ks,ko,"key");
+            ds=Math.floor(Math.random()*10)*2+1; setKep(ds,30,"door");
         }
         function setKep(s,o,kep){
             document.getElementById(s+"x"+o).src="icons/"+kep+".png";
