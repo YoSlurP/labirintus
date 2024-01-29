@@ -48,9 +48,13 @@
                     }while(sorok.includes(s));
                     sorok.push(s);
                     if(Math.random()>0.5){
-                        for(o=1;o<30;o++) if(t[s][o+1] != "wall") setKep(s,o,"wall");
+                        for(o=1;o<30;o++){
+                            if(t[s][o+1] != "wall") setKep(s,o,"wall");
+                        } 
                     }else{
-                        for(o=29;o>0;o--) if(t[s][o-1]!="wall") setKep(s,o,"wall");
+                        for(o=29;o>0;o--){
+                            if(t[s][o-1]!="wall") setKep(s,o,"wall");
+                        } 
                     }
                 }else if (osz.lenght<14) {
                     do{
