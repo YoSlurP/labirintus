@@ -47,7 +47,7 @@
                     do{
                         s=Math.floor(Math.random()*9+1)*2;
                     }while(sorok.includes(s))
-                    sorok.add(s);
+                    sorok.push(s);
                     if(Math.random()>0.5){
                         for(o=1;o<30;o++) if(t[s][o+1]!="wall") setKep(s,o,"wall");
                     }else{
